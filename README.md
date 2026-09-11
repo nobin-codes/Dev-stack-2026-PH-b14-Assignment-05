@@ -2,7 +2,7 @@ Dev Stack
 
 Dev Stack is a simple and responsive web application where users can explore different development technologies and build their own technology stack.
 
-Technologies Used:
+Technologies Used:<br>
 React.js
 TypeScript
 Tailwind CSS
@@ -41,7 +41,7 @@ Technology data
 Selected technologies
 Loading state
 
-For example:
+For example: <br>
 
 const [stack, setStack] = useState<Technology[]>([]);
 
@@ -53,7 +53,7 @@ useEffect is a React Hook used to perform an action after a component renders.
 
 In this project, I used useEffect in the TechnologySection component to load the technology data from the JSON file when the component starts.
 
-Example:
+Example: <br>
 
 useEffect(() => {
   // Load technology data
@@ -67,7 +67,7 @@ The key prop gives each item in a list a unique identity.
 
 React uses the key to understand which item has changed, been added, or removed.
 
-In this project:
+In this project: <br>
 
 {technologies.map((technology) => (
   <TechnologyCard
@@ -83,7 +83,7 @@ Here, technology.id is used as the unique key.
 Conditional rendering means showing different content depending on a condition.
 
 For example, in this project, a loading message is shown while the technology data is loading.
-
+<br>
 {loading ? (
   <p>Loading technologies...</p>
 ) : (
@@ -96,7 +96,7 @@ If loading is true, the loading message is shown. Otherwise, the technology card
 
 A parent component can send data to a child component using props.
 
-For example:
+For example:<br>
 
 <TechnologyCard
   technology={technology}
@@ -114,7 +114,7 @@ onAdd(technology);
 
 When the child calls onAdd, the function from the parent runs.
 
-Project Structure
+Project Structure<br>
 src/
 ├── components/
 │   ├── Navbar.tsx
