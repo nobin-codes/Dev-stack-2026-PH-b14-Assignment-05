@@ -1,32 +1,151 @@
-# React + TypeScript + Vite
+Dev Stack
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Dev Stack is a simple and responsive web application where users can explore different development technologies and build their own technology stack.
 
-Currently, two official plugins are available:
+Technologies Used:
+React.js
+TypeScript
+Tailwind CSS
+Vite
+React-Toastify
+JSON
+Main Features
+Explore Technologies
+Users can see different technologies with their name, category, description, difficulty level, and rating.
+Build Your Stack
+Users can add technologies to their own stack and remove them whenever they want.
+Responsive Design
+The website is responsive and works properly on desktop, tablet, and mobile devices.
+React Questions & Answers
+1. What is JSX, and why is it used in React?
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+JSX stands for JavaScript XML. It allows us to write HTML-like code inside JavaScript or TypeScript.
 
-## React Compiler
+React uses JSX because it makes writing and understanding the UI easier. We can write the structure of a component in a simple way using JSX.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+2. What is the difference between props and state?
 
-## Expanding the Oxlint configuration
+Props are used to send data from a parent component to a child component. Props are read-only.
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+State is data that belongs to a component and can change when the user interacts with the website.
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+For example, in this project, the selected technologies are stored in state.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+3. What is the useState hook, and where did you use it?
+
+useState is a React Hook that allows us to store and change data inside a component.
+
+I used useState in the TechnologySection component to store:
+
+Technology data
+Selected technologies
+Loading state
+
+For example:
+
+const [stack, setStack] = useState<Technology[]>([]);
+
+Here, stack stores the selected technologies and setStack is used to update them.
+
+4. What is the useEffect hook, and why is it used for loading JSON data?
+
+useEffect is a React Hook used to perform an action after a component renders.
+
+In this project, I used useEffect in the TechnologySection component to load the technology data from the JSON file when the component starts.
+
+Example:
+
+useEffect(() => {
+  // Load technology data
+}, []);
+
+The empty [] means the effect runs when the component is first loaded.
+
+5. Why is the key prop important when rendering lists?
+
+The key prop gives each item in a list a unique identity.
+
+React uses the key to understand which item has changed, been added, or removed.
+
+In this project:
+
+{technologies.map((technology) => (
+  <TechnologyCard
+    key={technology.id}
+    technology={technology}
+  />
+))}
+
+Here, technology.id is used as the unique key.
+
+6. What is conditional rendering? Give an example.
+
+Conditional rendering means showing different content depending on a condition.
+
+For example, in this project, a loading message is shown while the technology data is loading.
+
+{loading ? (
+  <p>Loading technologies...</p>
+) : (
+  <TechnologyCard />
+)}
+
+If loading is true, the loading message is shown. Otherwise, the technology cards are shown.
+
+7. How do you pass data from a parent component to a child component? How can a child component communicate with its parent?
+
+A parent component can send data to a child component using props.
+
+For example:
+
+<TechnologyCard
+  technology={technology}
+  isAdded={isAdded}
+  onAdd={handleAddToStack}
+/>
+
+Here, the parent sends technology, isAdded, and onAdd to the TechnologyCard child component.
+
+A child can communicate with its parent by using a callback function received through props.
+
+For example:
+
+onAdd(technology);
+
+When the child calls onAdd, the function from the parent runs.
+
+Project Structure
+src/
+├── components/
+│   ├── Navbar.tsx
+│   ├── Hero.tsx
+│   ├── TechnologySection.tsx
+│   ├── TechnologyCard.tsx
+│   ├── YourStack.tsx
+│   └── Footer.tsx
+│
+├── data/
+│   └── technologies.json
+│
+├── types/
+│   └── technology.ts
+│
+├── App.tsx
+├── index.css
+└── main.tsx
+How to Run the Project
+
+Install the dependencies:
+
+npm install
+
+Start the development server:
+
+npm run dev
+
+Then open the local URL provided by Vite in your browser.
+
+Author
+
+Dev Stack — React + TypeScript Project
+(Nobin)
