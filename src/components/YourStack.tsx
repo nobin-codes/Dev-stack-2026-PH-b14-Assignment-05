@@ -20,9 +20,10 @@ export default function YourStack({
         </h2>
 
         <p className="mt-1 text-[11px] text-gray-400">
-          {stack.length} Technology{" "}
-          {stack.length === 1 ? "Selected" : "Selected"}
-        </p>
+  {stack.length === 0
+    ? "No technologies selected yet"
+    : `${stack.length} Technology Selected`}
+</p>
       </div>
 
       {stack.length === 0 ? (
