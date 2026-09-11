@@ -147,5 +147,5 @@ Then open the local URL provided by Vite in your browser.
 
 Author
 
-Dev Stack — React + TypeScript Project
+Dev Stack — React + TypeScript Project<br>
 (Nobin)
