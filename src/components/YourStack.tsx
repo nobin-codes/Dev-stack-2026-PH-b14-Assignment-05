@@ -19,7 +19,9 @@ export default function YourStack({
         <p className="mt-1 text-[11px] text-gray-400">
           {stack.length === 0
             ? "No technologies selected yet"
-            : `${stack.length} Technology Selected`}
+            : `${stack.length} ${
+                stack.length === 1 ? "Technology" : "Technologies"
+              } Selected`}
         </p>
       </div>
 

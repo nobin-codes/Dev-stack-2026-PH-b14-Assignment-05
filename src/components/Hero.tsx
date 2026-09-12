@@ -12,9 +12,9 @@ export default function Hero() {
           </h1>
 
           <p className="mt-6 max-w-xl text-sm leading-6 text-gray-500 sm:text-base">
-            Explore frontend, backend, database, and tooling options,
-            compare them side by side, and put together the stack that
-            fits your next project.
+            Explore frontend, backend, database, and tooling options, compare
+            them side by side, and put together the stack that fits your next
+            project.
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row">
@@ -26,7 +26,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="#about"
+              href="#technologies"
               className="rounded-md border border-gray-200 bg-white px-7 py-3 text-center text-sm text-gray-700 transition hover:border-pink-300"
             >
               Learn More

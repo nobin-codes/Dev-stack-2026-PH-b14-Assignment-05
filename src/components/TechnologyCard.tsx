@@ -13,7 +13,6 @@ export default function TechnologyCard({
 }: TechnologyCardProps) {
   return (
     <article className="flex min-h-[300px] flex-col rounded-xl border border-gray-100 bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] transition hover:-translate-y-0.5 hover:shadow-md">
-    
       <div className="flex items-start justify-between">
         <div className="flex h-9 w-9 items-center justify-center">
           <img
@@ -28,17 +27,14 @@ export default function TechnologyCard({
         </span>
       </div>
 
-    
       <h3 className="mt-4 text-base font-bold text-gray-900">
         {technology.name}
       </h3>
 
-    
       <p className="mt-2 line-clamp-3 min-h-[58px] text-xs leading-5 text-gray-500">
         {technology.description}
       </p>
 
-   
       <div className="mt-4 flex items-center justify-between gap-2 text-[10px] text-gray-500">
         <span className="rounded bg-gray-50 px-2 py-1">
           {technology.category}
@@ -51,7 +47,6 @@ export default function TechnologyCard({
         </span>
       </div>
 
-   
       <button
         type="button"
         disabled={isAdded}
@@ -59,7 +54,7 @@ export default function TechnologyCard({
         className={`mt-auto w-full rounded-md py-2.5 text-xs font-medium transition ${
           isAdded
             ? "cursor-not-allowed bg-gray-300 text-gray-600"
-            : "bg-gray-900 text-white hover:bg-gray-800"
+            : "cursor-pointer bg-gray-900 text-white hover:bg-gray-800"
         }`}
       >
         {isAdded ? "✓ Added to Stack" : "Add to Stack"}

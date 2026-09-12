@@ -59,26 +59,26 @@ export default function Footer() {
               </h3>
 
               <div className="mt-4 space-y-3 text-xs text-gray-500">
-                <button
-                  type="button"
+                <a
+                  href="#home"
                   className="block cursor-pointer transition hover:text-pink-500"
                 >
                   Home
-                </button>
+                </a>
 
-                <button
-                  type="button"
+                <a
+                  href="#technologies"
                   className="block cursor-pointer transition hover:text-pink-500"
                 >
                   Technologies
-                </button>
+                </a>
 
-                <button
-                  type="button"
+                <a
+                  href="#home"
                   className="block cursor-pointer transition hover:text-pink-500"
                 >
                   Projects
-                </button>
+                </a>
               </div>
             </div>
 
@@ -88,19 +88,19 @@ export default function Footer() {
               </h3>
 
               <div className="mt-4 space-y-3 text-xs text-gray-500">
-                <button
-                  type="button"
+                <a
+                  href="#home"
                   className="block cursor-pointer transition hover:text-pink-500"
                 >
                   About
-                </button>
+                </a>
 
-                <button
-                  type="button"
+                <a
+                  href="#contact"
                   className="block cursor-pointer transition hover:text-pink-500"
                 >
                   Contact
-                </button>
+                </a>
 
                 <button
                   type="button"

@@ -47,7 +47,9 @@ export default function TechnologySection() {
   const handleRemove = (id: string) => {
     const technology = stack.find((item) => item.id === id);
 
-    setStack((previousStack) => previousStack.filter((item) => item.id !== id));
+    setStack((previousStack) =>
+      previousStack.filter((item) => item.id !== id),
+    );
 
     if (technology) {
       toast.info(`${technology.name} removed from your stack.`);
@@ -75,7 +77,8 @@ export default function TechnologySection() {
           </h2>
 
           <p className="mt-2 text-sm text-gray-500">
-            Pick one technology per category to build your ideal stack.
+            Choose the technologies that fit your project and build your ideal
+            stack.
           </p>
         </div>
 
