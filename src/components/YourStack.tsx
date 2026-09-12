@@ -13,28 +13,22 @@ export default function YourStack({
 }: YourStackProps) {
   return (
     <aside className="h-fit rounded-xl border border-gray-100 bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)]">
-      
       <div className="mb-5">
-        <h2 className="text-base font-bold text-gray-900">
-          Your Stack
-        </h2>
+        <h2 className="text-base font-bold text-gray-900">Your Stack</h2>
 
         <p className="mt-1 text-[11px] text-gray-400">
-  {stack.length === 0
-    ? "No technologies selected yet"
-    : `${stack.length} Technology Selected`}
-</p>
+          {stack.length === 0
+            ? "No technologies selected yet"
+            : `${stack.length} Technology Selected`}
+        </p>
       </div>
 
       {stack.length === 0 ? (
         <div className="flex min-h-[90px] items-center justify-center rounded-lg border border-dashed border-gray-200 px-4 text-center">
-          <p className="text-xs text-gray-400">
-            Your stack is empty.
-          </p>
+          <p className="text-xs text-gray-400">Your stack is empty.</p>
         </div>
       ) : (
         <>
-       
           <div className="space-y-2">
             {stack.map((technology) => (
               <div
@@ -60,7 +54,7 @@ export default function YourStack({
                 <button
                   type="button"
                   onClick={() => onRemove(technology.id)}
-                  className="text-sm text-gray-400 transition hover:text-red-500"
+                  className="cursor-pointer text-sm text-gray-400 transition hover:text-red-500"
                   aria-label={`Remove ${technology.name}`}
                 >
                   ✕
@@ -69,11 +63,10 @@ export default function YourStack({
             ))}
           </div>
 
-          
           <button
             type="button"
             onClick={onRemoveAll}
-            className="mt-5 w-full rounded-md border border-red-200 py-2 text-xs font-medium text-red-500 transition hover:bg-red-50"
+            className="mt-5 w-full cursor-pointer rounded-md border border-red-200 py-2 text-xs font-medium text-red-500 transition hover:bg-red-50"
           >
             Remove All
           </button>
