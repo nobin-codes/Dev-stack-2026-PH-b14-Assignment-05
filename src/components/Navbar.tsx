@@ -11,7 +11,6 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
       <nav className="relative mx-auto flex h-16 max-w-[1080px] items-center justify-between px-4 sm:px-5 lg:px-0">
-        
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -23,10 +22,7 @@ export default function Navbar() {
           <span className="block h-0.5 w-5 bg-gray-800"></span>
         </button>
 
-        <a
-          href="#home"
-          className="absolute left-1/2 flex -translate-x-1/2 cursor-pointer items-center md:static md:translate-x-0"
-        >
+        <a href="#home" className="flex cursor-pointer items-center">
           <img
             src={logoText}
             alt="Dev Stack Logo"
