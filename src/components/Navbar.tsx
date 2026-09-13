@@ -10,11 +10,12 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
-      <nav className="relative mx-auto flex h-16 max-w-[1080px] items-center justify-between px-4 sm:px-5 lg:px-0">
+      <nav className="mx-auto flex h-16 max-w-[1080px] items-center px-4 sm:px-5 lg:px-0">
+        {/* Mobile Menu Button */}
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
-          className="flex h-9 w-9 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md md:hidden"
+          className="flex h-9 w-9 shrink-0 cursor-pointer flex-col items-center justify-center gap-1.5 rounded-md md:hidden"
           aria-label={menuOpen ? "Close menu" : "Open menu"}
         >
           <span className="block h-0.5 w-5 bg-gray-800"></span>
@@ -22,7 +23,11 @@ export default function Navbar() {
           <span className="block h-0.5 w-5 bg-gray-800"></span>
         </button>
 
-        <a href="#home" className="flex cursor-pointer items-center">
+        {/* Logo */}
+        <a
+          href="#home"
+          className="ml-3 flex shrink-0 cursor-pointer items-center md:ml-0"
+        >
           <img
             src={logoText}
             alt="Dev Stack Logo"
@@ -30,6 +35,7 @@ export default function Navbar() {
           />
         </a>
 
+        {/* Desktop Navigation */}
         <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 md:flex">
           <a
             href="#home"
@@ -67,7 +73,8 @@ export default function Navbar() {
           </a>
         </div>
 
-        <div className="flex items-center gap-2 sm:gap-3">
+        {/* Sign In / Sign Up */}
+        <div className="ml-auto flex shrink-0 items-center gap-2 sm:gap-3">
           <button
             type="button"
             className="cursor-pointer text-xs text-gray-700 transition hover:text-pink-500 sm:text-sm"
@@ -84,6 +91,7 @@ export default function Navbar() {
         </div>
       </nav>
 
+      {/* Mobile Navigation Menu */}
       {menuOpen && (
         <div className="border-t border-gray-100 bg-white px-5 py-4 md:hidden">
           <div className="flex flex-col gap-4">
