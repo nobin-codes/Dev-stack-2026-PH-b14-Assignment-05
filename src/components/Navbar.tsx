@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
       <nav className="relative mx-auto flex h-16 max-w-[1080px] items-center px-3 sm:px-5 lg:px-0">
-       
+     
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
@@ -31,11 +31,11 @@ export default function Navbar() {
           <img
             src={logoText}
             alt="Dev Stack Logo"
-            className="h-7 w-auto object-contain sm:h-8"
+            className="h-6 w-auto max-w-[105px] object-contain min-[375px]:h-7 min-[375px]:max-w-[125px] sm:h-8 sm:max-w-none"
           />
         </a>
 
-  
+      
         <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 md:flex">
           <a
             href="#home"
@@ -73,25 +73,25 @@ export default function Navbar() {
           </a>
         </div>
 
-    
-        <div className="ml-auto flex shrink-0 items-center gap-1.5 sm:gap-3">
+      
+        <div className="ml-auto flex shrink-0 items-center gap-1 min-[375px]:gap-1.5 sm:gap-3">
           <button
             type="button"
-            className="cursor-pointer whitespace-nowrap text-[10px] text-gray-700 transition hover:text-pink-500 min-[375px]:text-[11px] sm:text-sm"
+            className="cursor-pointer whitespace-nowrap text-[9px] text-gray-700 transition hover:text-pink-500 min-[375px]:text-[10px] sm:text-sm"
           >
             Sign In
           </button>
 
           <button
             type="button"
-            className="gradient-bg cursor-pointer whitespace-nowrap rounded-full px-2.5 py-1.5 text-[10px] font-medium text-white transition hover:opacity-90 min-[375px]:px-3 min-[375px]:text-[11px] sm:px-5 sm:py-2 sm:text-sm"
+            className="gradient-bg cursor-pointer whitespace-nowrap rounded-full px-2.5 py-1.5 text-[9px] font-medium text-white transition hover:opacity-90 min-[375px]:px-3 min-[375px]:text-[10px] sm:px-5 sm:py-2 sm:text-sm"
           >
             Sign Up
           </button>
         </div>
       </nav>
 
-      
+   
       {menuOpen && (
         <div className="border-t border-gray-100 bg-white px-5 py-4 md:hidden">
           <div className="flex flex-col gap-4">
