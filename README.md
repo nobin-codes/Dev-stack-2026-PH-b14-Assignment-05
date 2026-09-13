@@ -1,73 +1,67 @@
 Dev Stack
 
-Dev Stack is a simple and responsive web application where users can explore different development technologies and build their own technology stack.
+A simple and responsive web application for exploring development technologies and building a personalized technology stack.
 
-Technologies Used:<br>
+🚀 Technologies Used
 React.js
 TypeScript
 Tailwind CSS
 Vite
 React-Toastify
 JSON
-Main Features
-Explore Technologies
-Users can see different technologies with their name, category, description, difficulty level, and rating.
-Build Your Stack
-Users can add technologies to their own stack and remove them whenever they want.
-Responsive Design
-The website is responsive and works properly on desktop, tablet, and mobile devices.
-React Questions & Answers
+✨ Features
+1. Explore Technologies
+
+Explore different development technologies with useful information such as their category, description, difficulty level, rating, and badge.
+
+2. Build Your Own Stack
+
+Add technologies to your personal stack and manage them easily. Duplicate technologies are prevented, and selected technologies can be removed individually or all at once.
+
+3. Responsive & Interactive Design
+
+The application provides a clean and responsive interface for desktop, tablet, and mobile devices. Toast notifications give users feedback when they add, remove, or try to add a duplicate technology.
+
+📚 React Questions & Answers
 1. What is JSX, and why is it used in React?
 
-JSX stands for JavaScript XML. It allows us to write HTML-like code inside JavaScript or TypeScript.
+JSX is a syntax that allows us to write HTML-like code inside JavaScript or TypeScript.
 
-React uses JSX because it makes writing and understanding the UI easier. We can write the structure of a component in a simple way using JSX.
+It is used in React because it makes the UI structure easier to read and write.
 
 2. What is the difference between props and state?
 
-Props are used to send data from a parent component to a child component. Props are read-only.
+Props are used to pass data from a parent component to a child component.
 
-State is data that belongs to a component and can change when the user interacts with the website.
+State is data managed inside a component that can change when the user interacts with the application.
 
-For example, in this project, the selected technologies are stored in state.
+3. What does the useState hook do, and where did you use it in this project?
 
-3. What is the useState hook, and where did you use it?
+The useState hook is used to store and update data in a React component.
 
-useState is a React Hook that allows us to store and change data inside a component.
+I used it in the TechnologySection component to manage the technologies, selected stack, and loading state.
 
-I used useState in the TechnologySection component to store:
-
-Technology data
-Selected technologies
-Loading state
-
-For example: <br>
+Example:
 
 const [stack, setStack] = useState<Technology[]>([]);
+4. What does the useEffect hook do, and why did you need it to load the JSON data?
 
-Here, stack stores the selected technologies and setStack is used to update them.
+The useEffect hook is used to run code after a component renders.
 
-4. What is the useEffect hook, and why is it used for loading JSON data?
+I used it in the TechnologySection component to load the technology data from the JSON file when the component starts.
 
-useEffect is a React Hook used to perform an action after a component renders.
-
-In this project, I used useEffect in the TechnologySection component to load the technology data from the JSON file when the component starts.
-
-Example: <br>
+Example:
 
 useEffect(() => {
   // Load technology data
 }, []);
+5. Why does every item in a .map() list need a unique key prop?
 
-The empty [] means the effect runs when the component is first loaded.
+A unique key helps React identify each item in a list.
 
-5. Why is the key prop important when rendering lists?
+It helps React efficiently update the correct items when the list changes.
 
-The key prop gives each item in a list a unique identity.
-
-React uses the key to understand which item has changed, been added, or removed.
-
-In this project: <br>
+Example:
 
 {technologies.map((technology) => (
   <TechnologyCard
@@ -75,28 +69,28 @@ In this project: <br>
     technology={technology}
   />
 ))}
+6. What is conditional rendering? Show one place you used it.
 
-Here, technology.id is used as the unique key.
+Conditional rendering means showing different UI depending on a condition.
 
-6. What is conditional rendering? Give an example.
+I used it in the YourStack component to show an empty stack message when no technology has been selected.
 
-Conditional rendering means showing different content depending on a condition.
+Example:
 
-For example, in this project, a loading message is shown while the technology data is loading.
-<br>
-{loading ? (
-  <p>Loading technologies...</p>
+{stack.length === 0 ? (
+  <p>Your stack is empty.</p>
 ) : (
-  <TechnologyCard />
+  <div>
+    {/* Selected technologies */}
+  </div>
 )}
+7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
-If loading is true, the loading message is shown. Otherwise, the technology cards are shown.
+A parent component passes data to a child through props.
 
-7. How do you pass data from a parent component to a child component? How can a child component communicate with its parent?
+In this project, TechnologySection passes the technology data and the onAdd function to TechnologyCard.
 
-A parent component can send data to a child component using props.
-
-For example:<br>
+Example:
 
 <TechnologyCard
   technology={technology}
@@ -104,48 +98,10 @@ For example:<br>
   onAdd={handleAddToStack}
 />
 
-Here, the parent sends technology, isAdded, and onAdd to the TechnologyCard child component.
+The child sends something back to the parent by calling the callback function received through props.
 
-A child can communicate with its parent by using a callback function received through props.
-
-For example:
+Example:
 
 onAdd(technology);
 
-When the child calls onAdd, the function from the parent runs.
-
-Project Structure<br>
-src/
-├── components/
-│   ├── Navbar.tsx
-│   ├── Hero.tsx
-│   ├── TechnologySection.tsx
-│   ├── TechnologyCard.tsx
-│   ├── YourStack.tsx
-│   └── Footer.tsx
-│
-├── data/
-│   └── technologies.json
-│
-├── types/
-│   └── technology.ts
-│
-├── App.tsx
-├── index.css
-└── main.tsx
-How to Run the Project
-
-Install the dependencies:
-
-npm install
-
-Start the development server:
-
-npm run dev
-
-Then open the local URL provided by Vite in your browser.
-
-Author
-
-Dev Stack — React + TypeScript Project<br>
-(Nobin)
+This calls the handleAddToStack function in the parent component.
