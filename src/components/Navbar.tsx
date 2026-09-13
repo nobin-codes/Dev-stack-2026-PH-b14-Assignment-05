@@ -23,16 +23,19 @@ export default function Navbar() {
           <span className="block h-0.5 w-5 bg-gray-800"></span>
         </button>
 
-        {/* Logo */}
-        <a href="#home" className="flex cursor-pointer items-center">
-          <img
-            src={logoText}
-            alt="Dev Stack Logo"
-            className="h-8 w-auto object-contain sm:h-9"
-          />
-        </a>
+        
+        <a
+  href="#home"
+  className="absolute left-1/2 flex -translate-x-1/2 cursor-pointer items-center md:static md:translate-x-0"
+>
+  <img
+    src={logoText}
+    alt="Dev Stack Logo"
+    className="h-8 w-auto object-contain sm:h-9"
+  />
+</a>
 
-        {/* Desktop Navigation */}
+       
         <div className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-7 md:flex">
           <a
             href="#home"
@@ -70,7 +73,7 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Sign In / Sign Up */}
+        
         <div className="flex items-center gap-2 sm:gap-3">
           <button
             type="button"
@@ -88,7 +91,7 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile Navigation Menu */}
+     
       {menuOpen && (
         <div className="border-t border-gray-100 bg-white px-5 py-4 md:hidden">
           <div className="flex flex-col gap-4">
