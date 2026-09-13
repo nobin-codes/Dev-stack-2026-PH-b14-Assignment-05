@@ -1,107 +1,76 @@
-Dev Stack
+# Dev Stack
 
-A simple and responsive web application for exploring development technologies and building a personalized technology stack.
+A modern and responsive web application that helps developers explore different technologies and build their own personalized development stack. Users can browse technology details, add technologies to their stack, and manage their selected technologies easily.
 
-🚀 Technologies Used
-React.js
-TypeScript
-Tailwind CSS
-Vite
-React-Toastify
-JSON
-✨ Features
-1. Explore Technologies
+## 🚀 Technologies Used
 
-Explore different development technologies with useful information such as their category, description, difficulty level, rating, and badge.
+- **React.js** — For building the user interface
+- **TypeScript** — For type-safe development
+- **Vite** — For fast development and building
+- **Tailwind CSS** — For responsive and modern styling
+- **React-Toastify** — For toast notifications
+- **JSON** — For storing technology data
 
-2. Build Your Own Stack
+## ✨ Features
 
-Add technologies to your personal stack and manage them easily. Duplicate technologies are prevented, and selected technologies can be removed individually or all at once.
+### 1. Explore Technologies
 
-3. Responsive & Interactive Design
+Browse different development technologies with information such as category, description, difficulty level, rating, and badge.
 
-The application provides a clean and responsive interface for desktop, tablet, and mobile devices. Toast notifications give users feedback when they add, remove, or try to add a duplicate technology.
+### 2. Build Your Own Stack
 
-📚 React Questions & Answers
-1. What is JSX, and why is it used in React?
+Add technologies to your personal stack, remove individual technologies, or remove all selected technologies at once. Duplicate technologies are also prevented.
+
+### 3. Responsive & Interactive UI
+
+The application works smoothly on desktop, tablet, and mobile devices. It also includes a mobile navigation menu, loading state, and toast notifications for user actions.
+
+---
+
+## 📚 React Questions & Answers
+
+### 1. What is JSX, and why is it used in React?
 
 JSX is a syntax that allows us to write HTML-like code inside JavaScript or TypeScript.
 
-It is used in React because it makes the UI structure easier to read and write.
+React uses JSX because it makes the UI code easier to read and write.
 
-2. What is the difference between props and state?
+### 2. What is the difference between props and state?
 
-Props are used to pass data from a parent component to a child component.
+**Props** are used to pass data from a parent component to a child component.
 
-State is data managed inside a component that can change when the user interacts with the application.
+**State** is data managed inside a component that can change when the user interacts with the application.
 
-3. What does the useState hook do, and where did you use it in this project?
+### 3. What does the `useState` hook do, and where did you use it in this project?
 
-The useState hook is used to store and update data in a React component.
+The `useState` hook is used to store and update data in a React component.
 
-I used it in the TechnologySection component to manage the technologies, selected stack, and loading state.
+I used it in the `TechnologySection` component to manage the technology list, selected stack, and loading state. I also used it in the `Navbar` component to control the mobile menu.
 
-Example:
+### 4. What does the `useEffect` hook do, and why did you need it to load the JSON data?
 
-const [stack, setStack] = useState<Technology[]>([]);
-4. What does the useEffect hook do, and why did you need it to load the JSON data?
+The `useEffect` hook is used to run code after a component renders.
 
-The useEffect hook is used to run code after a component renders.
+I used it in the `TechnologySection` component to load the technology data from the local JSON file when the component starts.
 
-I used it in the TechnologySection component to load the technology data from the JSON file when the component starts.
+### 5. Why does every item in a `.map()` list need a unique `key` prop?
 
-Example:
+A unique `key` helps React identify each item in a list.
 
-useEffect(() => {
-  // Load technology data
-}, []);
-5. Why does every item in a .map() list need a unique key prop?
+It allows React to efficiently update the correct items when the list changes.
 
-A unique key helps React identify each item in a list.
+In this project, I used `technology.id` as the key for each technology card.
 
-It helps React efficiently update the correct items when the list changes.
+### 6. What is conditional rendering? Show one place you used it.
 
-Example:
+Conditional rendering means showing different UI based on a condition.
 
-{technologies.map((technology) => (
-  <TechnologyCard
-    key={technology.id}
-    technology={technology}
-  />
-))}
-6. What is conditional rendering? Show one place you used it.
+I used it in the `YourStack` component. When the stack is empty, it shows **"Your stack is empty."** Otherwise, it shows the selected technologies.
 
-Conditional rendering means showing different UI depending on a condition.
+### 7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
 
-I used it in the YourStack component to show an empty stack message when no technology has been selected.
+A parent component passes data to a child component using **props**.
 
-Example:
+In this project, `TechnologySection` passes `technology`, `isAdded`, and `onAdd` to `TechnologyCard`.
 
-{stack.length === 0 ? (
-  <p>Your stack is empty.</p>
-) : (
-  <div>
-    {/* Selected technologies */}
-  </div>
-)}
-7. How do you pass data from a parent component to a child component, and how does a child send something back to the parent?
-
-A parent component passes data to a child through props.
-
-In this project, TechnologySection passes the technology data and the onAdd function to TechnologyCard.
-
-Example:
-
-<TechnologyCard
-  technology={technology}
-  isAdded={isAdded}
-  onAdd={handleAddToStack}
-/>
-
-The child sends something back to the parent by calling the callback function received through props.
-
-Example:
-
-onAdd(technology);
-
-This calls the handleAddToStack function in the parent component.
+The child sends something back to the parent by calling the callback function received through props. For example, `TechnologyCard` calls `onAdd(technology)` when the user clicks **Add to Stack**.
