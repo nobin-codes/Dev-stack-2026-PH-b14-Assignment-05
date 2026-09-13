@@ -11,7 +11,7 @@ export default function Navbar() {
   return (
     <header className="sticky top-0 z-50 border-b border-gray-100 bg-white/95 backdrop-blur">
       <nav className="relative mx-auto flex h-16 max-w-[1080px] items-center justify-between px-4 sm:px-5 lg:px-0">
-        {/* Mobile Menu Button */}
+        
         <button
           type="button"
           onClick={() => setMenuOpen(!menuOpen)}
